@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/styles_shop_cart.css">
+    <title>Shopping Cart</title>
+</head>
+<body>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Shop</a></li>
+            <li><a href="shopping cart.html">Shopping Cart</a></li>
+        </ul>
+    </nav>
+
+    <form action="http://localhost:8000/order_full/" id="order_form" method="get">
+        <section class="user_form">
+            <div class="form_row">
+                <label for="#name" id="name_label" class="label_form">Name:</label>
+                <div class="input">
+                    <input type="text" name ="name" id="name" placeholder="Enter your name" required="true">
+                </div>
+            </div>
+            <div class="form_row">
+                <label for="#email" id="email_label" class="label_form">Email:</label>
+                <div class="input">
+                    <input type="email" name="email" id="email" placeholder="Enter your email address" required="true">
+                </div>
+            </div>
+            <div class="form_row">
+                <label for="#phone" id="phone_label" class="label_form">Phone:</label>
+                <div class="input">
+                    <input type="tel" name="phone" id="phone" placeholder="Enter your phone number" required="true">
+                </div>
+            </div>
+            <div class="form_row">
+                <label for="#address" id="address_label" class="label_form">Address:</label>
+                <div class="input">
+                    <input type="text" name="address" id="address" placeholder="Enter your address" required="true">
+                </div>
+            </div>
+        </section>
+        
+        <section class="order">
+
+        </section>
+        <div class="form_end">
+            <p class="total_price">Total price: <span class="total_price_number">0</span> UAH</p>
+            <input type="submit" id="submit" class="btn" value="Submit">
+        </div>
+            
+    </form>
+    <script type="text/javascript" src="shop_cart.js"></script>
+</body>
+</html>

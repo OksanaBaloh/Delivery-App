@@ -1,0 +1,98 @@
+/* form */
+#order_form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;   
+    margin-top: 2rem;
+}
+.user_form, .order{
+    padding: 2rem 1.5rem;
+    width: 48%;
+    height: 70vh;
+}
+.user_form{
+    overflow: hidden;
+}
+.form_row{
+    margin: 0.5rem 0;
+    width: 85%;
+    height: 25%;
+
+}
+.label_form{
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    text-align: left;
+}
+input{
+    border: 3px solid var(--main-border-color);;
+    border-radius: 0.4rem;
+    width: 100%;
+    height: 3rem;
+}
+/* order */
+.order{
+    padding: 0.5rem;
+}
+.order_position{
+    display: flex;
+    justify-content: space-around;
+    margin: 0.2rem 0.2rem;
+    border: 3px solid var(--main-border-color);
+    border-radius: 0.7rem;
+    height: 200px;
+}
+.order_position .img_container, .order_position .text_container{
+    margin: 0.3rem;
+    width: 50%;
+    height: 90%;
+}
+.order_position .text_container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.order_position .text_container input{
+    text-align: center;
+    width: 80%;
+}
+.order_position .text_container input[type=number]:hover::-webkit-inner-spin-button {  
+    width: 20px;
+    height:  3rem;
+}
+.order_position .text_container input[type=number]:hover::-moz-inner-spin-button {  
+    width: 20px;
+    height:  3rem;
+}
+.remove_position{
+    position:absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    padding: 0 0.2rem;
+    font-weight: bold;
+    background: none;
+
+}
+/*order end*/
+.form_end{
+    position: absolute;
+    right: 0;
+    bottom: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 1em;
+    width: 40%;
+
+}
+.form_end p{
+    margin-right: 1rem;
+}
+.form_end input{
+    border-radius: 0.8rem;
+    width: 40%;
+}
