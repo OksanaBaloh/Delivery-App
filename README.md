@@ -9,11 +9,11 @@ After that __npm install__: express, body-parser, cors, sqlite3, md5.
 
 How to launch:
 
-For start server open folder "server" and use
+For start server use:
 
-npm start server
+npm start
 
-Finally, open "index.html" in any browser.
+Finally, open "index.html" in any browser or address "http://localhost:8080/".
 
 For close server use "CTRL+C"
 
