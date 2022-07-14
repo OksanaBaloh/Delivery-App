@@ -2,7 +2,11 @@
     "name": "express-api",
     "version": "1.0.0",
     "description": "Express REST API",
-    "main": "server/server.js",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error\" && exit 1",
+        "start": "nodemon exec babel-node src/server.js"
+    },
     "dependencies": {
         "body-parser": "^1.20.0",
         "cors": "^2.8.5",
