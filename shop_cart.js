@@ -1,5 +1,6 @@
 //add server address
-let HTTP_PORT = window.location.port || 8080;
+let HTTP_PORT = window.location.port;
+console.log(HTTP_PORT);
 let server_address = `http://localhost:${HTTP_PORT}/`;
 document.getElementById("order_form").setAttribute("action",`${server_address}order_full/`);
 function createEl(position, picture, cost, divImgContainer, divTextContainer ) {
