@@ -1,7 +1,10 @@
-//add shops
+//add server address
+let HTTP_PORT = window.location.port || 8080;
+let server_address = `http://localhost:${HTTP_PORT}/`;
+
 const shops = document.getElementById("shops");  
 let xhr = new XMLHttpRequest();
-xhr.open("GET", "http://localhost:8080/all/", true);
+xhr.open("GET", server_address + "all/", true);
 xhr.send();
 xhr.onreadystatechange = function () {
     if (this.readyState == 4) {
@@ -74,7 +77,7 @@ function showMenu(restaurantName){
     resName = {
         name : restaurantName
     };
-    xhr.open("POST", "http://localhost:8080/res/", true);
+    xhr.open("POST", server_address + "res/", true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.onreadystatechange = function() {//Call a function when the state changes.
         if(xhr.readyState == 4 && xhr.status == 200) {
@@ -97,7 +100,7 @@ function addToCart(pos, pic, cost){
           picture : pic,
           price : cost
         };
-    xhr.open("POST", "http://localhost:8080/post/", true);
+    xhr.open("POST", server_address + "post/", true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.onreadystatechange = function() {//Call a function when the state changes.
         if(xhr.readyState == 4 && xhr.status == 200) {

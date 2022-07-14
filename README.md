@@ -13,7 +13,7 @@ For start server use:
 
 npm start
 
-Finally, open "index.html" in any browser or address "http://localhost:8080/".
+Finally, open "index.html" in any browser or address which wrote in server logs (ex. "http://localhost:8080/"). 
 
 For close server use "CTRL+C"
 

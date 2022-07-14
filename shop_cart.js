@@ -1,3 +1,7 @@
+//add server address
+let HTTP_PORT = window.location.port || 8080;
+let server_address = `http://localhost:${HTTP_PORT}/`;
+document.getElementById("order_form").setAttribute("action",`${server_address}order_full/`);
 function createEl(position, picture, cost, divImgContainer, divTextContainer ) {
     const image = document.createElement("img");
     image.classList.add("image_position");
@@ -17,7 +21,7 @@ function createEl(position, picture, cost, divImgContainer, divTextContainer ) {
 }
     
 let xhr = new XMLHttpRequest();
-xhr.open("GET", "http://localhost:8080/order/", true);
+xhr.open("GET", server_address + "order/", true);
 xhr.send();
 
 let order = document.querySelector(".order"); 
@@ -42,7 +46,6 @@ xhr.onreadystatechange = function () {
 
             const button = document.createElement("button");
             button.classList.add("btn", "remove_position");
-            // input.setAttribute("id", `${data[i].picture}`);
             button.textContent = "x";
             divTextContainer.appendChild(button);
             button.addEventListener('click', () => removePosition(data[i].picture, orderPosition));
@@ -71,7 +74,7 @@ function removePosition(pictureName, orderPosition){
     data = {
         picName : pictureName
         };
-    xhr.open("POST", "http://localhost:8080/del/", true);
+    xhr.open("POST", server_address + "del/", true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.onreadystatechange = function() {//Call a function when the state changes.
         if(xhr.readyState == 4 && xhr.status == 200) {
@@ -92,7 +95,7 @@ function changeAmount(pictureName, input){
         picName : pictureName,
         amount : input.value
         };
-    xhr.open("POST", "http://localhost:8080/update/", true);
+    xhr.open("POST", server_address + "update/", true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.onreadystatechange = function() {//Call a function when the state changes.
         if(xhr.readyState == 4 && xhr.status == 200) {
@@ -116,42 +119,3 @@ function updateTotalPrice(){
     }
     return totalPrise.textContent = `${sum}`; 
 }
-
-//click on submit
-// const submit = document.getElementById("submit");  
-// submit.addEventListener('click', () => {
-//     let order = [];
-//     let position = [];
-//     let amount = [];
-//     document.querySelectorAll(".position_name").forEach(el => position.push(el.textContent));
-//     document.querySelectorAll(".text_container > input").forEach(el => amount.push(el.value));
-//     for(let i = 0; i < amount.length; i++)
-//     {
-//         order.push({
-//             position: position[i],
-//             amount: amount[i]
-//         })
-//     }
-//     let xhr = new XMLHttpRequest();
-//     data = {
-//         name : document.getElementById('name').value,
-//         phone : document.getElementById('phone').value,
-//         email : document.getElementById('email').value,
-//         adress : document.getElementById('address').value,
-//         sum : querySelector(".total_price_number").textContent,
-//         order : order
-//       };
-//     xhr.open("POST", "http://localhost:8080/order/", true);
-//     xhr.setRequestHeader("Content-Type", "application/json");
-//     xhr.onreadystatechange = function () {
-//         if (this.readyState == 4) {
-               
-//         }
-//         if (this.status != 200) {
-//             console.log('error: ' + (this.status ? this.statusText : 'request failed'));
-//         }
-//     }
-//     xhr.send(JSON.stringify(data));
-//     console.log(JSON.stringify(data));
-    
-// })
