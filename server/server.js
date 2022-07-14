@@ -21,7 +21,7 @@ app.listen(HTTP_PORT, () => {
 });
 // Root endpoint
 app.get("/", (req, res, next) => {
-    res.json({"message":"Ok"})
+  res.sendFile(path.join(__dirname, '/index.html'));
 });
 
 // Request all res
