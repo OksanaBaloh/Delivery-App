@@ -1,7 +1,5 @@
 //add server address
-let HTTP_PORT = window.location.port;
-console.log(HTTP_PORT);
-let server_address = `http://localhost:${HTTP_PORT}/`;
+let server_address = `https://delivery-app-shop.herokuapp.com/`;
 
 const shops = document.getElementById("shops");  
 let xhr = new XMLHttpRequest();

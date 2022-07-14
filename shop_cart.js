@@ -1,7 +1,5 @@
 //add server address
-let HTTP_PORT = window.location.port;
-console.log(HTTP_PORT);
-let server_address = `http://localhost:${HTTP_PORT}/`;
+let server_address = `https://delivery-app-shop.herokuapp.com/`;
 document.getElementById("order_form").setAttribute("action",`${server_address}order_full/`);
 function createEl(position, picture, cost, divImgContainer, divTextContainer ) {
     const image = document.createElement("img");
