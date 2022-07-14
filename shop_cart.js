@@ -17,7 +17,7 @@ function createEl(position, picture, cost, divImgContainer, divTextContainer ) {
 }
     
 let xhr = new XMLHttpRequest();
-xhr.open("GET", "http://localhost:8000/order/", true);
+xhr.open("GET", "http://localhost:8080/order/", true);
 xhr.send();
 
 let order = document.querySelector(".order"); 
@@ -71,7 +71,7 @@ function removePosition(pictureName, orderPosition){
     data = {
         picName : pictureName
         };
-    xhr.open("POST", "http://localhost:8000/del/", true);
+    xhr.open("POST", "http://localhost:8080/del/", true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.onreadystatechange = function() {//Call a function when the state changes.
         if(xhr.readyState == 4 && xhr.status == 200) {
@@ -92,7 +92,7 @@ function changeAmount(pictureName, input){
         picName : pictureName,
         amount : input.value
         };
-    xhr.open("POST", "http://localhost:8000/update/", true);
+    xhr.open("POST", "http://localhost:8080/update/", true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.onreadystatechange = function() {//Call a function when the state changes.
         if(xhr.readyState == 4 && xhr.status == 200) {
@@ -141,7 +141,7 @@ function updateTotalPrice(){
 //         sum : querySelector(".total_price_number").textContent,
 //         order : order
 //       };
-//     xhr.open("POST", "http://localhost:8000/order/", true);
+//     xhr.open("POST", "http://localhost:8080/order/", true);
 //     xhr.setRequestHeader("Content-Type", "application/json");
 //     xhr.onreadystatechange = function () {
 //         if (this.readyState == 4) {

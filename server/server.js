@@ -5,6 +5,8 @@ const path = require('path');
 let bodyParser = require('body-parser');
 
 let app = express();
+app.use(express.static(path.join(__dirname, '../')));
+app.use(express.static("public"));
 // Data Bases
 let db = require("./database.js");
 let db_order = require("./db_order.js")
@@ -14,14 +16,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Server port
-let HTTP_PORT = process.env.PORT || 8080;
+let HTTP_PORT = 8080;
 // Start server
 app.listen(HTTP_PORT, () => {
     console.log("Server running on port %PORT%".replace("%PORT%",HTTP_PORT))
 });
 // Root endpoint
 app.get("/", (req, res, next) => {
-  res.sendFile(path.join(__dirname, '/index.html'));
+  res.sendFile(path.join(__dirname, '../index.html'));
 });
 
 // Request all res
@@ -145,6 +147,7 @@ app.get("/order_full/", (req, res) => {
   db_order.all(sql_get, params, (err, rows) => {
     if (err) {
       res.status(400).json({"error":err.message});
+      return;
     }
 
     let order = "";
