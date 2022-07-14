@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Server port
-let HTTP_PORT = 8080;
+let HTTP_PORT = process.env.PORT || 8080;
 // Start server
 app.listen(HTTP_PORT, () => {
     console.log("Server running on port %PORT%".replace("%PORT%",HTTP_PORT))
